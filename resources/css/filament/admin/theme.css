@@ -1,0 +1,109 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+/* ==========================================================================
+   FILAMENT OVERRIDES FOR AOZORA ANIME & GAMING THEME
+   ========================================================================== */
+
+/* 1. Body & Wallpaper */
+body.fi-body {
+    /* Soft anime sky gradient background with subtle pattern */
+    background: linear-gradient(135deg, #f6f9fe 0%, #e2e6ff 100%);
+    background-image: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
+                      radial-gradient(circle at 0% 100%, rgba(245, 158, 11, 0.1) 0%, transparent 40%);
+    background-attachment: fixed;
+}
+
+/* 2. Topbar Glassmorphism */
+.fi-topbar {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 4px 30px rgba(0, 80, 226, 0.05);
+}
+
+/* 3. Sidebar Glassmorphism */
+.fi-sidebar {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-right: 1px solid rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 4px 0 24px rgba(13, 89, 242, 0.04);
+}
+
+.fi-sidebar-header {
+    background: transparent !important;
+}
+
+/* 4. Active Sidebar Items with Glow */
+.fi-sidebar-item-active > a {
+    background-color: rgba(0, 80, 226, 0.1) !important;
+    color: var(--fi-primary-600) !important;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px rgba(0, 80, 226, 0.2), 0 4px 12px rgba(0, 80, 226, 0.1) !important;
+    transition: all 0.3s ease;
+}
+
+/* 5. Main Content Cards (Glassmorphism + Border) */
+.fi-ta-content, .fi-fo-component-container {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 16px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* 6. Primary Buttons Glow Effect */
+.fi-btn-color-primary {
+    background: linear-gradient(135deg, var(--fi-primary-600), var(--fi-primary-500)) !important;
+    color: white !important;
+    box-shadow: 0 4px 14px rgba(0, 80, 226, 0.3) !important;
+    border: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fi-btn-color-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 80, 226, 0.4) !important;
+}
+
+/* 7. Typography Overrides */
+h1, h2, h3, h4, h5, h6, .fi-header-heading {
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    letter-spacing: -0.025em;
+}
+
+/* 8. Table Headers */
+.fi-ta-header-cell {
+    background-color: rgba(235, 238, 243, 0.5) !important;
+    color: #475569 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* 9. Mascot / Custom Footer Logo area */
+.aozora-mascot-container {
+    padding: 1rem;
+    margin-top: 2rem;
+    background: rgba(253, 232, 232, 0.4);
+    border-radius: 12px;
+    border: 1px dashed rgba(232, 58, 48, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.aozora-mascot-container::before {
+    content: "青空";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 60px;
+    color: rgba(232, 58, 48, 0.05);
+    font-weight: bold;
+}
