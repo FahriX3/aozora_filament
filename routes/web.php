@@ -6,12 +6,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\PengurusController;
 
 Route::get('/', function () {
     // Return events to landing page
     $events = \App\Models\Event::orderBy('event_date', 'asc')->get();
     return view('welcome', compact('events'));
 });
+
+Route::get('/pengurus', [PengurusController::class, 'index'])->name('pengurus');
 
 Route::get('/events/{slug}', function ($slug) {
     $event = \App\Models\Event::where('slug', $slug)->firstOrFail();
@@ -28,4 +31,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
